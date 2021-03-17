@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src", // Set the baseurl to avoid always using relative paths
     "target": "es5",
     "lib": [
       "dom",
