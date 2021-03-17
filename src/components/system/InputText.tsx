@@ -8,6 +8,7 @@ interface Props {
 
 const InputText = (props: Props) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!props.onChange) { return };
     props.onChange(e.target.value);
   }
 

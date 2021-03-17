@@ -8,6 +8,7 @@ interface Props {
 
 const InputNumber = (props: Props) => {
   const onChange = (newValue: string) => {
+    if (!props.onChange) { return };
     const newNumber = Number.parseInt(newValue);
     if (isNaN(newNumber)) {
       props.onChange(0);
