@@ -13,8 +13,8 @@ const InputText = (props: Props) => {
 
   return (
     <div className="input-text">
-      <label>{props.name}:</label>
-      <input type="text" value={props.text} onChange={onChange} />
+      <label htmlFor={props.name}>{props.name}:</label>
+      <input id={props.name} type="text" value={props.text} onChange={onChange} />
     </div>
   );
 }
