@@ -14,8 +14,26 @@ export interface ItemData {
   date_created: string;
 }
 
-export default interface Item {
+export interface Item {
   data: Array<ItemData>;
   links: Array<ItemLink>;
   href: string;
+}
+
+export interface ResultMetadata {
+  total_hits: number;
+}
+
+export interface ResultLink {
+  prompt: string;
+  rel: string
+  href: string;
+}
+
+export interface SearchResult {
+  metadata: ResultMetadata;
+  version: string;
+  items: Array<Item>;
+  hrefs: string;
+  link: Array<ResultLink>;
 }

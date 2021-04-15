@@ -1,4 +1,4 @@
-import Item from 'models/nasa-images/search-result';
+import { Item } from 'models/nasa-images/search-result';
 import Result from 'components/parts/nasa-images/Result';
 
 interface Props {

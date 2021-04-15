@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import SearchField from 'components/parts/nasa-images/SearchField';
 import Results from 'components/parts/nasa-images/Results';
-import Item from 'models/nasa-images/search-result';
+import { Item } from 'models/nasa-images/search-result';
 
 function NasaImages() {
   const [items, setItems] = useState<Array<Item>>([]);

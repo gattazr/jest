@@ -1,7 +1,7 @@
 import { useState, MouseEvent } from 'react';
 import { search } from 'services/api/nasa-images'
 import InputText from 'components/system/InputText';
-import Item from 'models/nasa-images/search-result';
+import { Item } from 'models/nasa-images/search-result';
 
 interface Props {
   onSearchCompleted: (newItems: Array<Item>) => void;
