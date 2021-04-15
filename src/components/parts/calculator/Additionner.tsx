@@ -3,7 +3,7 @@ import InputNumber from 'components/system/InputNumber'
 
 interface Props {};
 
-const Calculator = (props: Props) => {
+const Additionner = (props: Props) => {
   const [valueA, setValueA] = useState(0);
   const [valueB, setValueB] = useState(0);
 
@@ -12,7 +12,7 @@ const Calculator = (props: Props) => {
   };
 
   return (
-    <div className="calculator">
+    <div className="additionner">
       <h1>
         Calculator
       </h1>
@@ -25,4 +25,4 @@ const Calculator = (props: Props) => {
   );
 }
 
-export default Calculator;
+export default Additionner;
