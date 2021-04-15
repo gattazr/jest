@@ -1,10 +1,18 @@
-import Search from 'components/parts/nasa-images/Search';
+import { useState } from 'react';
+
+import SearchField from 'components/parts/nasa-images/SearchField';
+import Results from 'components/parts/nasa-images/Results';
+import Item from 'models/nasa-images/search-result';
 
 function NasaImages() {
+  const [items, setItems] = useState<Array<Item>>([]);
+  const onSearchCompleted = (newItems: Array<Item>) => {
+    setItems(newItems)
+  }
   return (
     <div className="nasa-images">
-      <Search></Search>
-      <div>Results soon</div>
+      <SearchField onSearchCompleted={onSearchCompleted} />
+      <Results items={items}/>
     </div>
   );
 }

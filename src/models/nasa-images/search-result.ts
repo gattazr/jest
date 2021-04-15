@@ -1,10 +1,10 @@
-export interface SearchResultLink {
+export interface ItemLink {
   render: string;
   href: string;
   rel: string;
 }
 
-export interface SearchResultData {
+export interface ItemData {
   media_type: String;
   nasa_id: string;
   keywords: Array<string>;
@@ -14,8 +14,8 @@ export interface SearchResultData {
   date_created: string;
 }
 
-export default interface SearchResult {
-  data: Array<SearchResultData>;
-  links: Array<SearchResultLink>;
+export default interface Item {
+  data: Array<ItemData>;
+  links: Array<ItemLink>;
   href: string;
 }

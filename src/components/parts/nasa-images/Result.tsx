@@ -1,10 +1,10 @@
-import SearchResult from 'models/nasa-images/search-result';
+import Item from 'models/nasa-images/search-result';
 
 interface Props {
-  item: SearchResult;
+  item: Item;
 }
 
-const SearchItem = (props: Props) => {
+const Result = (props: Props) => {
   const data = props.item.data[0];
   let previewImg = undefined;
   if (props.item.links) {
@@ -26,4 +26,4 @@ const SearchItem = (props: Props) => {
   );
 }
 
-export default SearchItem;
+export default Result;

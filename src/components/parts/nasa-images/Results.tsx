@@ -1,11 +1,11 @@
-import SearchResult from 'models/nasa-images/search-result';
-import SearchItem from 'components/parts/nasa-images/SearchItem';
+import Item from 'models/nasa-images/search-result';
+import Result from 'components/parts/nasa-images/Result';
 
 interface Props {
-  items: Array<SearchResult>;
+  items: Array<Item>;
 }
 
-const SearchItems = (props: Props) => {
+const Results = (props: Props) => {
   if(props.items.length === 0) {
     return (
       <div className="nasa-images-search-items">
@@ -19,7 +19,7 @@ const SearchItems = (props: Props) => {
         <div>
           {
             props.items.map((item, index) => {
-              return <SearchItem key={index} item={item} />
+              return <Result key={index} item={item} />
             })
           }
         </div>
@@ -28,4 +28,4 @@ const SearchItems = (props: Props) => {
   }
 }
 
-export default SearchItems;
+export default Results;
