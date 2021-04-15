@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import { SearchResult } from 'models/nasa-images/search-result';
 import Result from 'components/parts/nasa-images/Result';
 
@@ -17,7 +20,8 @@ const Results = (props: Props) => {
     return (
       <div className="nasa-images-search-items">
         <p>Yay ! { hits } hits</p>
-        <div>
+        <div css={{'display': 'grid',
+                   'grid-template-columns': 'auto auto auto auto'}}>
           {
             props.searchResult.items.map((item, index) => {
               return <Result key={index} item={item} />

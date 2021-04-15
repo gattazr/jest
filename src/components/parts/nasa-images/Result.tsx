@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import { Item } from 'models/nasa-images/search-result';
 
 interface Props {
@@ -13,15 +16,19 @@ const Result = (props: Props) => {
     })
 
     if(previewLinkImg) {
-      previewImg = <img src={previewLinkImg.href} alt={data.title} />
+      previewImg = <img width='100%' src={previewLinkImg.href} alt={data.title} />
     }
   }
-
+  const descriptionMaxLength = 500;
+  let description = data.description.slice(0, descriptionMaxLength)
+  if (data.description.length > descriptionMaxLength) {
+    description = '...'
+  }
   return (
-    <div className="nasa-images-search-item">
-      <h2>{data.title}</h2>
-      <p>{data.description}</p>
+    <div css={{'padding': '15px'}}>
       { previewImg }
+      <h4>{data.title}</h4>
+      <p>{description}</p>
     </div>
   );
 }
