@@ -1,10 +1,10 @@
 import { useState, MouseEvent } from 'react';
 import { search } from 'services/api/nasa-images'
 import InputText from 'components/system/InputText';
-import { Item } from 'models/nasa-images/search-result';
+import { SearchResult } from 'models/nasa-images/search-result';
 
 interface Props {
-  onSearchCompleted: (newItems: Array<Item>) => void;
+  onSearchCompleted: (newItems: SearchResult) => void;
 }
 
 const Search = (props: Props) => {
@@ -16,7 +16,7 @@ const Search = (props: Props) => {
 
   const makeSearch = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    search(query).then((res: Array<Item>) => {
+    search(query).then((res: SearchResult) => {
       props.onSearchCompleted(res);
     });
   };

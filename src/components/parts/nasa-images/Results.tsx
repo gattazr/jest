@@ -1,24 +1,25 @@
-import { Item } from 'models/nasa-images/search-result';
+import { SearchResult } from 'models/nasa-images/search-result';
 import Result from 'components/parts/nasa-images/Result';
 
 interface Props {
-  items: Array<Item>;
+  searchResult: SearchResult;
 }
 
 const Results = (props: Props) => {
-  if(props.items.length === 0) {
+  const hits = props.searchResult.metadata.total_hits
+  if (hits === 0) {
     return (
       <div className="nasa-images-search-items">
-        <p>No results</p>
+        <p>No hit :-(</p>
       </div>
     );
   } else {
     return (
       <div className="nasa-images-search-items">
-        <p>Yay ! { props.items.length } results</p>
+        <p>Yay ! { hits } hits</p>
         <div>
           {
-            props.items.map((item, index) => {
+            props.searchResult.items.map((item, index) => {
               return <Result key={index} item={item} />
             })
           }
