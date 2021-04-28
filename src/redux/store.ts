@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
+import nasaImages from 'redux/reducers/nasa-images'
 
 const reducer = combineReducers({
+  nasaImages
 })
 
 const store = configureStore({
