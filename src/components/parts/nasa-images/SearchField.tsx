@@ -2,12 +2,13 @@ import { useState, MouseEvent } from 'react';
 import { search } from 'services/api/nasa-images'
 import InputText from 'components/system/InputText';
 import { SearchResult } from 'models/nasa-images/search-result';
+import { setSearchResults } from 'redux/reducers/nasa-images'
+import { useAppDispatch } from 'redux/hooks'
 
-interface Props {
-  onSearchCompleted: (newItems: SearchResult) => void;
-}
+interface Props {}
 
 const Search = (props: Props) => {
+  const dispatch = useAppDispatch()
   const [query, setQuery] = useState('');
 
   const onQueryChange = (newValue: string) => {
@@ -17,10 +18,9 @@ const Search = (props: Props) => {
   const makeSearch = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     search(query).then((res: SearchResult) => {
-      props.onSearchCompleted(res);
+      dispatch(setSearchResults(res))
     });
   };
-
 
   return (
     <div className="nasa-images-search">

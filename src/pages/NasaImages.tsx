@@ -1,15 +1,12 @@
-import { useState } from 'react';
-
 import SearchField from 'components/parts/nasa-images/SearchField';
-import Results from 'components/parts/nasa-images/Results';
-import { SearchResult } from 'models/nasa-images/search-result';
+import SearchResults from 'components/parts/nasa-images/Results';
+import { useAppSelector } from 'redux/hooks'
 
 function NasaImages() {
-  const [searchResult, setSearchResult] = useState<SearchResult>();
   return (
     <div className="nasa-images">
       <SearchField />
-      {searchResult ? <Results searchResult={searchResult} />: null}
+      <SearchResults />
     </div>
   );
 }
