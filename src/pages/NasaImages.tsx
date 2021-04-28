@@ -6,13 +6,9 @@ import { SearchResult } from 'models/nasa-images/search-result';
 
 function NasaImages() {
   const [searchResult, setSearchResult] = useState<SearchResult>();
-  const onSearchCompleted = (newResult: SearchResult) => {
-    setSearchResult(newResult)
-  }
-
   return (
     <div className="nasa-images">
-      <SearchField onSearchCompleted={onSearchCompleted} />
+      <SearchField />
       {searchResult ? <Results searchResult={searchResult} />: null}
     </div>
   );
