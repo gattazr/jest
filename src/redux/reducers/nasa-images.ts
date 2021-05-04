@@ -26,7 +26,7 @@ const slice = createSlice({
       state.hits = action.payload.metadata.total_hits
       state.currentPage = 1
     },
-    changeCurrentPage: (state, action: PayloadAction<number>) =>  {
+    changePage: (state, action: PayloadAction<number>) =>  {
       // TODO: Complete
     }
   }
