@@ -11,7 +11,7 @@ interface NasaImagesState {
 
 const initialState: NasaImagesState = {
   query: '',
-  hits: 0,
+  hits: -1,
   results: [],
   currentPage: 0
 }
